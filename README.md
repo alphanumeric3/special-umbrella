@@ -10,7 +10,8 @@ This came from a conversation I had about how many access points a building has!
 ## How to use
 
 1. Run Kismet. You can use the (hopefully) included wardriving config with
-`--override wardrive -T kismet` to only collect WiFi networks, and not devices connected.
+`kismet --override wardrive -T kismet` to only collect WiFi networks, and not
+devices connected.
 
 2. Then run `./query.sh <name of db> <ssid to look for>`. The name of
 the database is the newly created `.kismet` file.  
