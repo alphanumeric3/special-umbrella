@@ -1,13 +1,22 @@
 # ap-research
 
-Counting certain APs around me using Kismet & its API.
+Repo for when I walked around counting WiFi APs for an SSID.
 
-Very simple for now, I just walk around with Kismet and check the API using collect.py.
+It's very simple for now, I just walk around with Kismet running, and query the BSSID/MAC,
+SSID and manufacturer.
 
-This came from a conversation I had about how many WiFi access points my college has!
+This came from a conversation I had about how many access points a building has!
 
-Other methods I could try:
-- Using NetworkManager, grep, uniq and other small tools to build a list. But Kismet offers
-more info which I could use in the future
-- Using Kismet's wardriving override, it outputs to a CSV (.wiglecsv) so it's convenient to
-parse. This takes the script I made out of the equation, because it doesn't work in wardriving mode.
+## How to use
+
+1. Run Kismet. You can use the (hopefully) included wardriving config with
+`--override wardrive -T kismet` to only collect WiFi networks, and not devices connected.
+
+2. Then run `./query.sh <name of db> <ssid to look for>`. The name of
+the database is the newly created `.kismet` file.  
+I like running this with `watch -n 0.5 -d ./query.sh <db> <ssid>`.
+
+## collect.py
+
+collect.py is a previous method for this. It uses Kismet's API instead, and shows
+the amount of associated devices per AP (doesn't work in wardriving mode).
