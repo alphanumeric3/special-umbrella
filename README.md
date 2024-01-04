@@ -1,4 +1,4 @@
-# ap-research
+# special-umbrella
 
 Repo for when I walked around counting WiFi APs for an SSID.
 
